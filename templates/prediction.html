@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block myBlock %}
+
+<br>
+<h2>예측된 붓꽃의 유형은 <span style="color:red;"> {{ session['y_prediction'] }}</span>입니다.</h2>
+
+<br>
+<a href="{{url_for('index')}}">되돌아가기</a>
+
+{% endblock %}

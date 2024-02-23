@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block myBlock %}
+
+<h2>붓꽃의 치수를 입력해 주세요:</h2>
+<br>
+
+<form method="POST">			{# action 속성은 설정 불필요. #}
+    {{ form.hidden_tag() }}     {# 이것은 CSRF 보안책. #}   
+    {{ form.sepalLength.label }} {{form.sepalLength()}}   
+    {% if form.sepalLength.errors %}
+    <span style="color: red;">입력값 오류!</span>
+    {% endif %} <br> <br>
+    {{ form.sepalWidth.label }} {{form.sepalWidth()}}  
+    {% if form.sepalWidth.errors %}
+    <span style="color: red;">입력값 오류!</span>
+    {% endif %}
+    <br> <br>
+    {{ form.petalLength.label }} {{form.petalLength()}} 
+    {% if form.petalLength.errors %}
+    <span style="color: red;">입력값 오류!</span>
+    {% endif %} <br> <br>
+    {{ form.petalWidth.label }} {{form.petalWidth()}}  
+    {% if form.petalWidth.errors %}
+    <span style="color: red;">입력값 오류!</span>
+    {% endif %} <br> <br> <br>
+    {{ form.submit() }}
+</form>
+
+
+{% endblock %}
